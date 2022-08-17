@@ -4,8 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+  <script src="{{ "/js/jquery-inline-footnotes-min.js" | relative_url }}"></script>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="{{ "/css/searchoverlay.css" | relative_url }}" rel="stylesheet">
+  <link href="{{ "/css/inlinefootnotes.css" | relative_url }}" rel="stylesheet">
 
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
@@ -13,4 +15,12 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+  <!--Inline footnotes plugin-->
+  <script> 
+    $(function() {
+      $("[rel=footnote]").inlineFootnote({
+        hideFromContent:""
+      });
+    });
+  </script> 
 </head>
